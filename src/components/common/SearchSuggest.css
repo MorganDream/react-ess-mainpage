@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/**
+ * Use this mixin when you don't want to display under high-contrast-mode on IE/Edge.
+ * This doesn't work for Chrome and Firefox.
+ */
+/**
+ * Use this mixin when you want to display only under high-contrast-mode on IE and Edge.
+ * When you use this, under NOT-high-contrast-mode on IE and Edge, the target element's display is "none".
+ * On Chrome or Firefox, the target element's display is "none" regardless of whether high-contrast-mode or not.
+ */
+.search-suggest {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+.search-suggest.hidden {
+    display: none;
+}
+.search-suggest.wap-core-ui-huedrive-search.on-search-active {
+    background: #f0f1f2;
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 7;
+    overflow-y: scroll;
+}
+.search-suggest .hidden {
+    display: none;
+}
+.search-suggest-box-container {
+    z-index: 100;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+.search-suggest-box-container.on-search-active {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 32px;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+.search-suggest-box-container.on-search-active .wap-text-input-inputbox.wap-input-group-child.form-control.input-element-with-opt-icon.form-input-clearmode {
+    width: 100%;
+    -webkit-transition: width 0.25s ease;
+    -moz-transition: width 0.25s ease;
+    -o-transition: width 0.25s ease;
+    transition: width 0.25s ease;
+}
+.search-suggest-box-container-input-container {
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.search-suggest-box-container-input-container .hidden {
+    display: none;
+}
+.search-suggest-box-container-input-container .wap-input-group.component.wap-core-ui-wapinputgroup {
+    width: 100%;
+}
+.search-suggest-box-container-input-container .wap-input-group.component.wap-core-ui-wapinputgroup .form-input-clear-button {
+    margin-right: 16px;
+}
+.search-suggest-box-container-input-container .wap-input-group.component.wap-core-ui-wapinputgroup .wap-dropdown-button-button {
+    width: 80px;
+    height: 40px;
+    border: none;
+}
+.search-suggest-box-container-input-container .wap-input-group.component.wap-core-ui-wapinputgroup .wap-text-input-inputbox.wap-input-group-child.form-control.input-element-with-opt-icon.form-input-clearmode {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: width 0.2s ease;
+    -moz-transition: width 0.2s ease;
+    -o-transition: width 0.2s ease;
+    transition: width 0.2s ease;
+}

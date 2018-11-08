@@ -1,0 +1,1693 @@
+@charset "utf-8";
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/**
+ * Use this mixin when you don't want to display under high-contrast-mode on IE/Edge.
+ * This doesn't work for Chrome and Firefox.
+ */
+/**
+ * Use this mixin when you want to display only under high-contrast-mode on IE and Edge.
+ * When you use this, under NOT-high-contrast-mode on IE and Edge, the target element's display is "none".
+ * On Chrome or Firefox, the target element's display is "none" regardless of whether high-contrast-mode or not.
+ */
+/* --------------------------------------------------------------------------
+ * HUE grid system.
+ * inspired by bootstrap and flexboxgrid.com
+ * row: children of row are aligned horizontaly. height of row can be fixed or auto
+ * col: children of col are aligned vertically. width of col can be x/12, fixed, or auto.
+ * col-as-row: from parents col-as-row looks like col and from children col-as-row looks like row.
+ * this grid system itselt is not aware of padding. use ./grid-cell-padding.less
+ * TODO col-lg(larger than 1440px width?)
+ * @author sato_hi
+ * ------------------------------------------------------------------------*/
+.col {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+.col-as-row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+.spreadsheet-file-context-menu-container {
+    -webkit-transition: opacity 0.218s;
+    -moz-transition: opacity 0.218s;
+    -o-transition: opacity 0.218s;
+    transition: opacity 0.218s;
+    background: #ffffff;
+    cursor: default;
+    font-size: 1.2996rem;
+    margin: 0;
+    outline: none;
+    position: absolute;
+    left: -9999px;
+    -webkit-border-radius: 0;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 0;
+    -moz-background-clip: border;
+    border-radius: 0;
+    background-clip: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 8px 0;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1037;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.spreadsheet-file-context-menu-container::-webkit-scrollbar {
+    width: 5px;
+    background: #f0f1f2;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+.spreadsheet-file-context-menu-container::-webkit-scrollbar-track {
+    -webkit-border-radius: 1px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 1px;
+    -moz-background-clip: border;
+    border-radius: 1px;
+    background-clip: border-box;
+}
+.spreadsheet-file-context-menu-container::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 1px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 1px;
+    -moz-background-clip: border;
+    border-radius: 1px;
+    background-clip: border-box;
+    background: #b8bdc2;
+}
+.spreadsheet-file-context-menu-container::-webkit-scrollbar-thumb:hover {
+    background: #a4aab0;
+}
+.spreadsheet-file-context-menu-container .context-menu-item {
+    color: #333333;
+    cursor: pointer;
+    padding: 6px 24px 6px 32px;
+    white-space: nowrap;
+    min-width: 192px;
+    border: none;
+    height: 24px;
+    margin: 0;
+    position: relative;
+    -webkit-transition: background-color 0.218s ease;
+    -moz-transition: background-color 0.218s ease;
+    -o-transition: background-color 0.218s ease;
+    transition: background-color 0.218s ease;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.spreadsheet-file-context-menu-container .context-menu-item:hover {
+    background-color: #e6e8ea;
+}
+.spreadsheet-file-context-menu-container .context-menu-item.selected {
+    background-color: #e6e8ea;
+}
+.spreadsheet-file-context-menu-container .context-menu-item-wrapper {
+    margin-left: 4px;
+    margin-top: 3px;
+    padding-left: 16px;
+}
+.spreadsheet-file-context-menu-container .context-menu-item-icon {
+    font-size: 1.498rem;
+    color: #000000;
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.spreadsheet-file-context-menu-container .context-menu-item-icon-wrapper {
+    background-repeat: no-repeat;
+    height: 21px;
+    left: 3px;
+    position: absolute;
+    right: auto;
+    top: 3px;
+    vertical-align: middle;
+    width: 21px;
+    background-origin: border-box;
+    margin-left: 12px;
+    margin-top: 6px;
+    zoom: 1;
+    filter: alpha(opacity=50);
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+.spreadsheet-file-context-menu-container .context-menu-item-icon-holder {
+    height: 21px;
+    width: 21px;
+    display: inline-block;
+    position: relative;
+}
+.spreadsheet-file-context-menu-container .context-menu-item-label {
+    font-size: 1.2996rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.spreadsheet-file-context-menu-container .context-menu-item-right-icon-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.spreadsheet-file-context-menu-container .context-menu-group-separator {
+    border-top: 1px solid #e6e8ea;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.spreadsheet-file-context-menu-container .context-menu-group-separator:last-child {
+    display: none;
+}
+.spreadsheet-file-content-panel {
+    width: 100%;
+    padding: 16px 80px 16px 96px;
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.spreadsheet-file-content-panel .highlight {
+    background-color: #f4ec42;
+}
+.spreadsheet-file-content-panel.content-scroll {
+    overflow: auto;
+}
+.spreadsheet-file-content-panel.body-scroll {
+    overflow: visible;
+}
+.spreadsheet-file-content-panel::-webkit-scrollbar {
+    width: 5px;
+    background: #f0f1f2;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+.spreadsheet-file-content-panel::-webkit-scrollbar-track {
+    -webkit-border-radius: 1px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 1px;
+    -moz-background-clip: border;
+    border-radius: 1px;
+    background-clip: border-box;
+}
+.spreadsheet-file-content-panel::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 1px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 1px;
+    -moz-background-clip: border;
+    border-radius: 1px;
+    background-clip: border-box;
+    background: #b8bdc2;
+}
+.spreadsheet-file-content-panel::-webkit-scrollbar-thumb:hover {
+    background: #a4aab0;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-item {
+    width: calc(12.5% -  16px);
+}
+.spreadsheet-file-content-panel.grid.resized-7 .spreadsheet-file-content-panel-item {
+    width: calc(14.2857143% -  16px);
+}
+.spreadsheet-file-content-panel.grid.resized-6 .spreadsheet-file-content-panel-item {
+    width: calc(16.6666667% -  16px);
+}
+.spreadsheet-file-content-panel.grid.resized-5 .spreadsheet-file-content-panel-item {
+    width: calc(20% -  16px);
+}
+.spreadsheet-file-content-panel.grid.resized-4 .spreadsheet-file-content-panel-item {
+    width: calc(25% -  16px);
+}
+.spreadsheet-file-content-panel.file-info-panel-shown {
+    margin-right: 365px;
+    padding-right: 8px;
+}
+.spreadsheet-file-content-panel.file-info-panel-shown.list {
+    padding-right: calc(6.25%);
+}
+.spreadsheet-file-content-panel-drag-selection {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1055;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.175);
+    border: 1px solid #cdd0d3;
+}
+.spreadsheet-file-content-panel.workspace {
+    padding: 0px 2px;
+}
+.spreadsheet-file-content-panel.standalone {
+    padding: 16px;
+    height: 504px;
+}
+.spreadsheet-file-content-panel-body .load-spinner {
+    margin-top: 8px;
+}
+.spreadsheet-file-content-panel-body.standalone {
+    padding: 0px;
+    position: relative;
+    height: 100%;
+}
+.spreadsheet-file-content-panel-body.standalone .spreadsheet-file-content-panel-no-files-available {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+.spreadsheet-file-content-panel-no-files-available {
+    position: absolute;
+    top: 50%;
+    left: 96px;
+    right: 80px;
+    text-align: center;
+    transform: translateY(-50%);
+}
+.spreadsheet-file-content-panel-no-files-available.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-no-files-available.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-no-files-available-content {
+    color: #aaaaaa;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel-no-files-available-content-icon {
+    font-size: 4rem;
+}
+.spreadsheet-file-content-panel-no-files-available-content-span {
+    display: block;
+    padding: 8px;
+}
+.spreadsheet-file-content-panel-drag-element-container {
+    -webkit-transform: translateZ(0px);
+    -moz-transform: translateZ(0px);
+    -o-transform: translateZ(0px);
+    -ms-transform: translateZ(0px);
+    transform: translateZ(0px);
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    z-index: 1037;
+    width: 198px;
+    height: 78px;
+}
+.spreadsheet-file-content-panel-drag-element-container.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-container.visible .spreadsheet-file-content-panel-drag-element-holder {
+    zoom: 1;
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+.spreadsheet-file-content-panel-drag-element-container.visible .spreadsheet-file-content-panel-drag-element-total-count {
+    zoom: 1;
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    -webkit-animation: showCount 0.218s ease;
+    -moz-animation: showCount 0.218s ease;
+    -o-animation: showCount 0.218s ease;
+    animation: showCount 0.218s ease;
+}
+.spreadsheet-file-content-panel-drag-element-container.drag-end {
+    -webkit-transition: -webkit-transform 0.298s ease;
+    -moz-transition: -moz-transform 0.298s ease;
+    -o-transition: -o-transform 0.298s ease;
+    transition: -webkit-transform 0.298s ease,-moz-transform 0.298s ease,-o-transform 0.298s ease,transform 0.298s ease;
+}
+.spreadsheet-file-content-panel-drag-element-container.count-1 .spreadsheet-file-content-panel-drag-element-holder.back {
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+.spreadsheet-file-content-panel-drag-element-container.count-1 .spreadsheet-file-content-panel-drag-element-total-count {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-holder {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 168px;
+    height: 40px;
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+.spreadsheet-file-content-panel-drag-element-holder.front {
+    z-index: 2;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.spreadsheet-file-content-panel-drag-element-holder.back {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    -webkit-transform: translate(4px, 4px);
+    -moz-transform: translate(4px, 4px);
+    -o-transform: translate(4px, 4px);
+    -ms-transform: translate(4px, 4px);
+    transform: translate(4px, 4px);
+}
+.spreadsheet-file-content-panel-drag-element-total-count {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateZ(1px);
+    -moz-transform: translateZ(1px);
+    -o-transform: translateZ(1px);
+    -ms-transform: translateZ(1px);
+    transform: translateZ(1px);
+    -webkit-transition-duration: 0.2s, 0.1s, 0.1s;
+    -moz-transition-duration: 0.2s, 0.1s, 0.1s;
+    -o-transition-duration: 0.2s, 0.1s, 0.1s;
+    transition-duration: 0.2s, 0.1s, 0.1s;
+    -webkit-transition-property: opacity, color, background-color;
+    -moz-transition-property: opacity, color, background-color;
+    -o-transition-property: opacity, color, background-color;
+    transition-property: opacity, color, background-color;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    background-color: #ef5350;
+    -webkit-border-radius: 50%;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 50%;
+    -moz-background-clip: border;
+    border-radius: 50%;
+    background-clip: border-box;
+    color: #ffffff;
+    font-size: 1.4rem;
+    height: 24px;
+    line-height: 24px;
+    margin-top: -12px;
+    min-width: 24px;
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    position: absolute;
+    text-align: center;
+    z-index: 7;
+    left: 171px;
+    top: 15px;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-container {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    background: #4285f4;
+    color: #ffffff;
+    white-space: nowrap;
+    width: 168px;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div {
+    margin: 8px;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    font-size: 2rem;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    content: "\e026";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    content: "\e65e";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    content: "\e00d";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    content: "\e04e";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #3f51b5;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    content: "\e1b6";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    content: "\e1b5";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    content: "\e1b2";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #03a9f4;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    content: "\e610";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    content: "\e02e";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    content: "\e924";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    content: "\e010";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    content: "\e91f";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #ff9800;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    content: "\e91e";
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-file-name-div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8px;
+}
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-star-div,
+.spreadsheet-file-content-panel-drag-element .spreadsheet-file-content-panel-item-tags-div {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-container.list .spreadsheet-file-content-panel-item-icon-or-image-div {
+    height: 32px;
+    margin: 0;
+    margin-left: 6px;
+    margin-right: 4px;
+    width: 32px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    background: #ffffff;
+}
+.spreadsheet-file-content-panel-drag-element-container.list .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    height: 20px;
+    margin: 6px;
+    width: 20px;
+    display: inline-block;
+    font-size: 2rem;
+}
+.spreadsheet-file-content-panel-drag-element-container.grid .spreadsheet-file-content-panel-item-container.folder .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    color: #ffffff;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-container {
+    display: flex;
+    height: 32px;
+    align-items: center;
+    background: #4285f4;
+    color: #ffffff;
+    white-space: nowrap;
+    width: 168px;
+    position: absolute;
+    -webkit-transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, -webkit-transform 0.25s ease;
+    -moz-transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, -moz-transform 0.25s ease;
+    -o-transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, -o-transform 0.25s ease;
+    transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease,-webkit-transform 0.25s ease,-moz-transform 0.25s ease,-o-transform 0.25s ease,transform 0.25s ease;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-container.drag-end {
+    -webkit-transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, -webkit-transform 0.25s ease;
+    -moz-transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, -moz-transform 0.25s ease;
+    -o-transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, -o-transform 0.25s ease;
+    transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease,-webkit-transform 0.25s ease,-moz-transform 0.25s ease,-o-transform 0.25s ease,transform 0.25s ease;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div {
+    margin: 8px;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    font-size: 1.6002rem;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    content: "\e026";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    content: "\e65e";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    content: "\e00d";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    content: "\e04e";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #3f51b5;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    content: "\e1b6";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    content: "\e1b5";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    content: "\e1b2";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #03a9f4;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    content: "\e610";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    content: "\e02e";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    content: "\e924";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    content: "\e010";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    content: "\e91f";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #ff9800;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    content: "\e91e";
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-file-name-div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8px;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-star-div,
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-tags-div {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-container.folder .spreadsheet-file-content-panel-item-icon-or-image-div {
+    margin: 10px;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-container.folder .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    font-size: 2rem;
+    height: 20px;
+    width: 20px;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-container.folder.grid .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    color: #ffffff;
+}
+.spreadsheet-file-content-panel-drag-element-initializer .spreadsheet-file-content-panel-item-container.file .spreadsheet-file-content-panel-item-file-name-div {
+    font-size: 1.2996rem;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.list .spreadsheet-file-content-panel-item-container .spreadsheet-file-content-panel-item-icon-or-image-div,
+.spreadsheet-file-content-panel-drag-element-initializer.list .spreadsheet-file-content-panel-item-container.folder .spreadsheet-file-content-panel-item-icon-or-image-div {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    margin-left: 16px;
+    border-radius: 50%;
+    background-clip: border-box;
+    background-color: #ffffff;
+    -webkit-transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease;
+    -moz-transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease;
+    -o-transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease;
+    transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.list .spreadsheet-file-content-panel-item-container .spreadsheet-file-content-panel-item-icon-or-image-div-icon,
+.spreadsheet-file-content-panel-drag-element-initializer.list .spreadsheet-file-content-panel-item-container.folder .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    font-size: 2rem;
+    font-weight: 400;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    -webkit-transition: margin 0.25s ease;
+    -moz-transition: margin 0.25s ease;
+    -o-transition: margin 0.25s ease;
+    transition: margin 0.25s ease;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.list .spreadsheet-file-content-panel-item-container .spreadsheet-file-content-panel-item-file-name-div,
+.spreadsheet-file-content-panel-drag-element-initializer.list .spreadsheet-file-content-panel-item-container.folder .spreadsheet-file-content-panel-item-file-name-div {
+    padding: 4px 8px;
+    font-size: 1.4rem;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.list.after-initial-anim .spreadsheet-file-content-panel-item-icon-or-image-div {
+    height: 32px;
+    margin: 0;
+    margin-left: 6px;
+    margin-right: 4px;
+    width: 32px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    background: #ffffff;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.list.after-initial-anim .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    height: 20px;
+    margin: 6px;
+    width: 20px;
+    display: inline-block;
+    font-size: 2rem;
+    position: relative;
+    top: -2px;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.dropping {
+    position: relative;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.dropping .spreadsheet-file-content-panel-item-container {
+    -webkit-transition: -webkit-transform 0.15s ease;
+    -moz-transition: -moz-transform 0.15s ease;
+    -o-transition: -o-transform 0.15s ease;
+    transition: -webkit-transform 0.15s ease,-moz-transform 0.15s ease,-o-transform 0.15s ease,transform 0.15s ease;
+}
+.spreadsheet-file-content-panel-drag-element-initializer.animation-start .spreadsheet-file-content-panel-item-container {
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+}
+.spreadsheet-file-content-panel-drag-element-drop-container {
+    position: absolute;
+}
+.spreadsheet-file-content-panel-drag-element-drop-container.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-drag-element-drop-container .spreadsheet-file-content-panel-item {
+    margin: 0;
+}
+.spreadsheet-file-content-panel.grid.standalone {
+    padding: 16px;
+    height: 100%;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-body {
+    padding-bottom: 8px;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-body.standalone {
+    height: 504px;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-list-header {
+    display: none;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-folder-section {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-folder-section.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-file-section {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel.grid .spreadsheet-file-content-panel-file-section.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel.list {
+    padding: 24px calc(2/16 * 100%) 24px calc(1/16 * 100%);
+}
+.spreadsheet-file-content-panel.list.workspace {
+    padding: 0px 2px;
+}
+.spreadsheet-file-content-panel.list.standalone {
+    padding: 16px;
+    height: 100%;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-body-content {
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    margin: 1px;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-folder-section {
+    border-top: 1px solid #f4f5f6;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-folder-section.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-folder-section .spreadsheet-file-content-panel-item:first-child {
+    border-top-color: transparent;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-folder-section .spreadsheet-file-content-panel-item.selected:first-child {
+    border-top-color: #4285f4;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-folder-section .spreadsheet-file-content-panel-item.drag-over:first-child {
+    border-top-color: #4285f4;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-file-section {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 1px;
+}
+.spreadsheet-file-content-panel.list .spreadsheet-file-content-panel-file-section.hidden {
+    display: none;
+}
+@keyframes showCount {
+    0% {
+        -webkit-transform: translate(-15px, 15px);
+        -moz-transform: translate(-15px, 15px);
+        -o-transform: translate(-15px, 15px);
+        -ms-transform: translate(-15px, 15px);
+        transform: translate(-15px, 15px);
+        z-index: -1;
+    }
+    50% {
+        -webkit-transform: translate(5px, -5px);
+        -moz-transform: translate(5px, -5px);
+        -o-transform: translate(5px, -5px);
+        -ms-transform: translate(5px, -5px);
+        transform: translate(5px, -5px);
+        z-index: -1;
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+        z-index: 2;
+    }
+}

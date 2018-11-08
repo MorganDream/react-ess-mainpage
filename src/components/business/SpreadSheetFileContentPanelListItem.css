@@ -1,0 +1,2937 @@
+@charset "utf-8";
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/* deprecated */
+/**
+ * Use this mixin when you don't want to display under high-contrast-mode on IE/Edge.
+ * This doesn't work for Chrome and Firefox.
+ */
+/**
+ * Use this mixin when you want to display only under high-contrast-mode on IE and Edge.
+ * When you use this, under NOT-high-contrast-mode on IE and Edge, the target element's display is "none".
+ * On Chrome or Firefox, the target element's display is "none" regardless of whether high-contrast-mode or not.
+ */
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: none;
+    max-width: 560px;
+    max-height: 490px;
+    text-align: left;
+    background-color: #ffffff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #dadde0;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 -1px 4px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 -1px 4px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 -1px 4px -1px rgba(0, 0, 0, 0.1);
+    white-space: normal;
+}
+.popover.top {
+    margin-top: -10px;
+}
+.popover.right {
+    margin-left: 10px;
+}
+.popover.bottom {
+    margin-top: 10px;
+}
+.popover.left {
+    margin-left: -10px;
+}
+.popover.fade {
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    zoom: 1;
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+.popover.fade-hidden {
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+.popover.popover-error {
+    background-color: #e91e63;
+    color: #ffffff;
+    border-color: #e91e63;
+}
+.popover.popover-error .popover-title {
+    background-color: #d11b59;
+    border-bottom-color: #e91e63;
+    color: #ffffff;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+    background-clip: padding-box;
+}
+.popover.popover-error.top .arrow {
+    border-top-color: #e91e63;
+}
+.popover.popover-error.top .arrow:after {
+    border-top-color: #e91e63;
+}
+.popover.popover-error.bottom .arrow {
+    border-bottom-color: #e91e63;
+}
+.popover.popover-error.bottom .arrow:after {
+    border-bottom-color: #e91e63;
+}
+.popover.popover-error.left .arrow {
+    border-left-color: #e91e63;
+}
+.popover.popover-error.left .arrow:after {
+    border-left-color: #e91e63;
+}
+.popover.popover-error.right .arrow {
+    border-right-color: #e91e63;
+}
+.popover.popover-error.right .arrow:after {
+    border-right-color: #e91e63;
+}
+.popover.popover-warning {
+    background-color: #f4b142;
+    color: #ffffff;
+    border-color: #f4b142;
+}
+.popover.popover-warning .popover-title {
+    background-color: #db9f3b;
+    border-bottom-color: #f4b142;
+    color: #ffffff;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+    background-clip: padding-box;
+}
+.popover.popover-warning.top .arrow {
+    border-top-color: #f4b142;
+}
+.popover.popover-warning.top .arrow:after {
+    border-top-color: #f4b142;
+}
+.popover.popover-warning.bottom .arrow {
+    border-bottom-color: #f4b142;
+}
+.popover.popover-warning.bottom .arrow:after {
+    border-bottom-color: #f4b142;
+}
+.popover.popover-warning.left .arrow {
+    border-left-color: #f4b142;
+}
+.popover.popover-warning.left .arrow:after {
+    border-left-color: #f4b142;
+}
+.popover.popover-warning.right .arrow {
+    border-right-color: #f4b142;
+}
+.popover.popover-warning.right .arrow:after {
+    border-right-color: #f4b142;
+}
+.popover.popover-tooltip {
+    background-color: rgba(97, 97, 97, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(97, 97, 97, 0.9);
+    -webkit-border-radius: 2px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 2px;
+    -moz-background-clip: border;
+    border-radius: 2px;
+    background-clip: border-box;
+    border: none;
+}
+.popover.popover-tooltip .popover-title {
+    background-color: rgba(97, 97, 97, 0.9);
+    border-bottom-color: rgba(97, 97, 97, 0.9);
+    color: #333333;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+    background-clip: padding-box;
+}
+.popover.popover-tooltip.top .arrow {
+    border-top-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.top .arrow:after {
+    border-top-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.bottom .arrow {
+    border-bottom-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.bottom .arrow:after {
+    border-bottom-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.left .arrow {
+    border-left-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.left .arrow:after {
+    border-left-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.right .arrow {
+    border-right-color: rgba(97, 97, 97, 0.9);
+}
+.popover.popover-tooltip.right .arrow:after {
+    border-right-color: rgba(97, 97, 97, 0.9);
+}
+@media (-ms-high-contrast: active) {
+    .popover.popover-tooltip {
+        border: 1px solid #ffffff;
+    }
+}
+@media (-ms-high-contrast: white-on-black) {
+    .popover.popover-tooltip {
+        border: 1px solid #ffffff;
+    }
+}
+@media (-ms-high-contrast: black-on-white) {
+    .popover.popover-tooltip {
+        border: 1px solid #000000;
+    }
+}
+.popover.popover-tooltip.fade {
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+.popover.popover-tooltip.fade.bottom {
+    transform-origin: top;
+    transform: translateY(-10px) scale(0.5);
+}
+.popover.popover-tooltip.fade.top {
+    transform-origin: bottom;
+    transform: translateY(10px) scale(0.5);
+}
+.popover.popover-tooltip.fade.right {
+    transform-origin: left;
+    transform: translateX(-10px) scale(0.5);
+}
+.popover.popover-tooltip.fade.left {
+    transform-origin: right;
+    transform: translateX(10px) scale(0.5);
+}
+.popover.popover-tooltip.fade.tooltip-animation {
+    transform: translate(0px) scale(1);
+    zoom: 1;
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.24, 1, 0.32, 1), opacity 0.1s ease;
+    -moz-transition: -moz-transform 0.3s cubic-bezier(0.24, 1, 0.32, 1), opacity 0.1s ease;
+    -o-transition: -o-transform 0.3s cubic-bezier(0.24, 1, 0.32, 1), opacity 0.1s ease;
+    transition: -webkit-transform 0.3s cubic-bezier(0.24, 1, 0.32, 1),-moz-transform 0.3s cubic-bezier(0.24, 1, 0.32, 1),-o-transform 0.3s cubic-bezier(0.24, 1, 0.32, 1),transform 0.3s cubic-bezier(0.24, 1, 0.32, 1), opacity 0.1s ease;
+}
+.popover.popover-tooltip .arrow {
+    display: none;
+}
+.popover.popover-hint {
+    background-color: #f0f1f2;
+    color: #000000;
+    border-color: #f0f1f2;
+}
+.popover.popover-hint .popover-title {
+    background-color: #dadde0;
+    border-bottom-color: #f0f1f2;
+    color: #333333;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+    background-clip: padding-box;
+}
+.popover.popover-hint.top .arrow {
+    border-top-color: #f0f1f2;
+}
+.popover.popover-hint.top .arrow:after {
+    border-top-color: #f0f1f2;
+}
+.popover.popover-hint.bottom .arrow {
+    border-bottom-color: #f0f1f2;
+}
+.popover.popover-hint.bottom .arrow:after {
+    border-bottom-color: #f0f1f2;
+}
+.popover.popover-hint.left .arrow {
+    border-left-color: #f0f1f2;
+}
+.popover.popover-hint.left .arrow:after {
+    border-left-color: #f0f1f2;
+}
+.popover.popover-hint.right .arrow {
+    border-right-color: #f0f1f2;
+}
+.popover.popover-hint.right .arrow:after {
+    border-right-color: #f0f1f2;
+}
+.popover .popover-title {
+    margin: 0;
+    text-align: center;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.33;
+    background-color: #dadde0;
+    border-bottom: 1px solid #dadde0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 5px 5px 0 0;
+    -moz-background-clip: border;
+    border-radius: 5px 5px 0 0;
+    background-clip: border-box;
+}
+.popover .popover-text-content {
+    padding: 4px 8px;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.popover .popover-html-content {
+    word-wrap: break-word;
+}
+.popover .arrow {
+    border-width: 11px;
+}
+.popover .arrow,
+.popover .arrow:after {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.popover .arrow:after {
+    border-width: 10px;
+    content: " ";
+}
+.popover.top .arrow {
+    left: 50%;
+    margin-left: -11px;
+    border-bottom-width: 0;
+    bottom: -11px;
+}
+.popover.top .arrow:after {
+    bottom: 1px;
+    margin-left: -10px;
+    border-bottom-width: 0;
+}
+.popover.right .arrow {
+    top: 50%;
+    left: -11px;
+    margin-top: -11px;
+    border-left-width: 0;
+}
+.popover.right .arrow:after {
+    left: 1px;
+    bottom: -10px;
+    border-left-width: 0;
+}
+.popover.bottom .arrow {
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    top: -11px;
+}
+.popover.bottom .arrow:after {
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+}
+.popover.left .arrow {
+    top: 50%;
+    right: -11px;
+    margin-top: -11px;
+    border-right-width: 0;
+}
+.popover.left .arrow:after {
+    right: 1px;
+    border-right-width: 0;
+    bottom: -10px;
+}
+.input-clear-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 30%;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.input-clear-icon:before {
+    margin-right: 8px;
+}
+.input-clear-icon:before {
+    font-family: 'wapicon';
+}
+.input-clear-icon:before {
+    content: "\e61a";
+}
+.input-resume-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 35%;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.input-resume-icon:before {
+    margin-right: 8px;
+}
+.input-resume-icon:before {
+    font-family: 'wapicon';
+}
+.input-resume-icon:before {
+    content: "\e062";
+}
+.input-switch-mode-icon {
+    padding: 5px 8px;
+    cursor: pointer;
+}
+.form-input-marker {
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 4px solid transparent;
+    zoom: 1;
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+.form-input-marker-comment {
+    border-top: 4px solid #ffc107;
+    border-right: 4px solid #ffc107;
+}
+.form-input-marker-todo {
+    border-top: 4px solid #4285f4;
+    border-right: 4px solid #4285f4;
+}
+.form-input-marker-todo-half {
+    border-top: 4px solid #4285f4;
+}
+.form-control {
+    display: block;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #c2cad8;
+    border-radius: 2px;
+}
+.form-control:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: -webkit-box-shadow ease-in-out .15s;
+    -moz-transition: -moz-box-shadow ease-in-out .15s;
+    -o-transition: box-shadow ease-in-out .15s;
+    transition: box-shadow ease-in-out .15s;
+    outline: none;
+    border-color: #4285f4;
+}
+.form-control:focus::-webkit-input-placeholder {
+    color: #e3e3e3;
+}
+.form-control:focus:-moz-placeholder {
+    color: #e3e3e3;
+}
+.form-control:focus::-moz-placeholder {
+    color: #e3e3e3;
+}
+.form-control:focus:-ms-input-placeholder {
+    color: #e3e3e3;
+}
+.form-control:focus[readonly]::-webkit-input-placeholder {
+    color: transparent;
+}
+.form-control:focus[readonly]:-moz-placeholder {
+    color: transparent;
+}
+.form-control:focus[readonly]::-moz-placeholder {
+    color: transparent;
+}
+.form-control:focus[readonly]:-ms-input-placeholder {
+    color: transparent;
+}
+.form-control::-webkit-input-placeholder {
+    color: #d0d0d0;
+}
+.form-control:-moz-placeholder {
+    color: #d0d0d0;
+}
+.form-control::-moz-placeholder {
+    color: #d0d0d0;
+}
+.form-control:-ms-input-placeholder {
+    color: #d0d0d0;
+}
+.form-control[disabled],
+fieldset[disabled] .form-control {
+    cursor: default;
+    background-color: #e6e8ea;
+    opacity: 1;
+}
+.form-control:not(.wap-field-error):not(.wap-field-warning):not(.input-common-comment-plugin-comment-highlight)[readonly] {
+    cursor: text;
+    background-color: #edeff3;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    resize: none;
+    opacity: 1;
+}
+.form-control.wap-field-warning:focus[readonly] {
+    background-color: #fdf7ec;
+}
+.form-control.wap-field-error:focus[readonly] {
+    background-color: #fce8ef;
+}
+.form-control[readonly]::-webkit-input-placeholder {
+    color: transparent;
+}
+.form-control[readonly]:-moz-placeholder {
+    color: transparent;
+}
+.form-control[readonly]::-moz-placeholder {
+    color: transparent;
+}
+.form-control[readonly]:-ms-input-placeholder {
+    color: transparent;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control.form-input-clearmode {
+    padding-right: 32px;
+}
+.form-input-clear-button {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 8px;
+    font-size: 1.7rem;
+    color: #9299a0;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.form-input-clear-button:before {
+    margin-right: 8px;
+}
+.form-input-clear-button:before {
+    font-family: 'wapicon';
+}
+.form-input-clear-button:before {
+    content: "\e61a";
+}
+.form-input-restore-button {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 8px;
+    font-size: 1.7rem;
+    color: #9299a0;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.form-input-restore-button:before {
+    margin-right: 8px;
+}
+.form-input-restore-button:before {
+    font-family: 'wapicon';
+}
+.form-input-restore-button:before {
+    content: "\e062";
+}
+.form-group {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.form-group .input-parent {
+    position: relative;
+    display: inline-block;
+}
+.form-group.wap-core-ui-textinput input {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.form-group .label-element {
+    font-size: 1.4rem;
+    width: 208px;
+    min-width: 208px;
+    text-align: right;
+    padding-right: 32px;
+    line-height: 32px;
+    vertical-align: top;
+    color: #7f7f7f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.form-group .label-element-empty {
+    display: none;
+}
+.form-group.readonly .label-element {
+    color: #7f7f7f;
+}
+.form-group:not(.readonly) .must-column {
+    position: relative;
+}
+.form-group:not(.readonly) .must-column:after {
+    color: #e91e63;
+    content: "*";
+    position: absolute;
+    font-size: 1.7rem;
+    right: 24px;
+    top: -6px;
+}
+.form-group:not(.readonly).direction-column .must-column {
+    position: relative;
+}
+.form-group:not(.readonly).direction-column .must-column:after {
+    color: #e91e63;
+    content: "*";
+    position: relative;
+    font-size: 1.7rem;
+    line-height: 1.4rem;
+    margin-left: -2px;
+    right: auto;
+    top: -6px;
+}
+.form-group ::-webkit-input-placeholder {
+    text-align: left;
+}
+.form-group :-moz-placeholder {
+    text-align: left;
+}
+.form-group.direction-column {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.form-group.direction-column .label-element {
+    text-align: left;
+}
+.form-group.direction-row {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.form-group.direction-row .label-element {
+    text-align: right;
+}
+.form-control.wap-field-error {
+    background-color: #fce8ef;
+    border-color: #e91e63;
+}
+.form-control.wap-field-error::-webkit-input-placeholder {
+    color: #ccbcc2;
+}
+.form-control.wap-field-error:-moz-placeholder {
+    color: #ccbcc2;
+}
+.form-control.wap-field-error::-moz-placeholder {
+    color: #ccbcc2;
+}
+.form-control.wap-field-error:-ms-input-placeholder {
+    color: #ccbcc2;
+}
+.form-control.wap-field-error:focus {
+    border-color: #e91e63;
+    outline: 0;
+    background-color: #ffffff;
+}
+.form-control.wap-field-error:focus::-webkit-input-placeholder {
+    color: #e3e3e3;
+}
+.form-control.wap-field-error:focus:-moz-placeholder {
+    color: #e3e3e3;
+}
+.form-control.wap-field-error:focus::-moz-placeholder {
+    color: #e3e3e3;
+}
+.form-control.wap-field-error:focus:-ms-input-placeholder {
+    color: #e3e3e3;
+}
+.form-control.wap-field-warning {
+    background-color: #fdf7ec;
+    border-color: #f4b142;
+}
+.form-control.wap-field-warning:focus {
+    border-color: #f4b142;
+    outline: 0;
+    background-color: #ffffff;
+}
+.form-control.wap-field-success {
+    background-color: #eaf8f7;
+    border-color: #00b19d;
+}
+.form-control.wap-field-success:focus {
+    border-color: #00b19d;
+    outline: 0;
+    background-color: #ffffff;
+}
+.form-control.wap-field-info {
+    background-color: #ecf2fd;
+    border-color: #4285f4;
+}
+.form-control.wap-field-info:focus {
+    border-color: #4285f4;
+    outline: 0;
+    background-color: #ffffff;
+}
+.form-control.wap-field-not-entered {
+    background-color: #e6e8ea;
+}
+.form-control.wap-field-not-entered:focus {
+    background-color: #ffffff;
+}
+.form-control.wap-field-auto-filled {
+    background-color: #f4f5f6;
+}
+.form-control.wap-field-auto-filled:focus {
+    background-color: #ffffff;
+}
+.form-control.input-common-comment-plugin-comment-highlight {
+    background-color: #fff8e1;
+}
+/* --------------------------------------------------------------------------
+ * HUE grid system.
+ * inspired by bootstrap and flexboxgrid.com
+ * row: children of row are aligned horizontaly. height of row can be fixed or auto
+ * col: children of col are aligned vertically. width of col can be x/12, fixed, or auto.
+ * col-as-row: from parents col-as-row looks like col and from children col-as-row looks like row.
+ * this grid system itselt is not aware of padding. use ./grid-cell-padding.less
+ * TODO col-lg(larger than 1440px width?)
+ * @author sato_hi
+ * ------------------------------------------------------------------------*/
+.col,
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview,
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata,
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-owner,
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-date,
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-size,
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.more-ops {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+.col-as-row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+.spreadsheet-file-content-panel-item {
+    -webkit-transition: opacity 0.298s ease;
+    -moz-transition: opacity 0.298s ease;
+    -o-transition: opacity 0.298s ease;
+    transition: opacity 0.298s ease;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    -webkit-transition: -webkit-box-shadow 0.218s ease;
+    -moz-transition: -moz-box-shadow 0.218s ease;
+    -o-transition: box-shadow 0.218s ease;
+    transition: box-shadow 0.218s ease;
+}
+.spreadsheet-file-content-panel-item-tag-icon:before {
+    content: "\25CF";
+}
+.spreadsheet-file-content-panel-item.animated {
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    zoom: 1;
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+.spreadsheet-file-content-panel-item.animated-hidden {
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+.spreadsheet-file-content-panel-item.grid {
+    border-color: transparent;
+    width: calc(12.5% - 16px);
+    min-width: 135px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item {
+    border-color: transparent;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container {
+    width: 100%;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container-select-icon {
+    top: -6px;
+    left: -6px;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview {
+    background: #ffffff;
+    height: 144px;
+    margin-bottom: 1px;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 -1px 2px -1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-image {
+    min-width: 100%;
+    min-height: 144px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-image.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon {
+    height: 100%;
+    font-size: 3.2rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.file {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.file:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.file:before {
+    content: "\e026";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.file.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ess {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ess:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ess:before {
+    content: "\e65e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ess.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.img {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.img:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.img:before {
+    content: "\e00d";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.img.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ics {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ics:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ics:before {
+    content: "\e04e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ics.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.zip {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #3f51b5;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.zip:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.zip:before {
+    content: "\e1b6";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.zip.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.xls {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.xls:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.xls:before {
+    content: "\e1b5";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.xls.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.pdf {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.pdf:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.pdf:before {
+    content: "\e1b2";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.pdf.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.txt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #03a9f4;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.txt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.txt:before {
+    content: "\e610";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.txt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.folder {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.folder:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.folder:before {
+    content: "\e02e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.folder.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.vid {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.vid:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.vid:before {
+    content: "\e924";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.vid.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.audio {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.audio:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.audio:before {
+    content: "\e010";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.audio.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.drawing {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.drawing:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.drawing:before {
+    content: "\e91f";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.drawing.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ppt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #ff9800;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ppt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ppt:before {
+    content: "\e91e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.ppt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.hidden.ess {
+    position: absolute;
+    bottom: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview.folder {
+    margin: 0;
+    background: none;
+    height: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    position: absolute;
+    left: 0;
+    width: 40px;
+    padding: 0;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview.folder .spreadsheet-file-content-panel-item-thumbnail-icon {
+    font-size: 2rem;
+    height: 20px;
+    width: 20px;
+    margin: 10px;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview.file {
+    margin: 0;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    padding-top: 75%;
+    height: 0;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview.file .spreadsheet-file-content-panel-item-thumbnail-icon,
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.thumbnail-preview.file .spreadsheet-file-content-panel-item-thumbnail-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 6.4rem;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview {
+    width: 90%;
+    height: 32px;
+    float: left;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-file-name-div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-star-div {
+    color: #fabd11;
+    margin-right: 4px;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-star-div-icon.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-star-div-icon.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-tags-div {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.folder {
+    background: transparent;
+    height: 40px;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 8px 8px 8px 40px;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file {
+    -webkit-border-bottom-left-radius: 1px;
+    -moz-border-radius-bottomleft: 1px;
+    border-bottom-left-radius: 1px;
+    -webkit-border-bottom-right-radius: 1px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius-bottomright: 1px;
+    -moz-background-clip: border;
+    border-bottom-right-radius: 1px;
+    background-clip: border-box;
+    padding-right: 8px;
+    position: relative;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    top: 0px;
+    left: 0;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    font-size: 1.6002rem;
+    height: 16px;
+    width: 16px;
+    margin: 8px;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    content: "\e026";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    content: "\e65e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    content: "\e00d";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    content: "\e04e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #3f51b5;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    content: "\e1b6";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    content: "\e1b5";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    content: "\e1b2";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #03a9f4;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    content: "\e610";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    content: "\e02e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    content: "\e924";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    content: "\e010";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    content: "\e91f";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #ff9800;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    content: "\e91e";
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-file-name-div {
+    margin-left: 32px;
+    height: 32px;
+    line-height: 32px;
+    color: #333333;
+    font-size: 1.3008rem;
+    padding: 0;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.metadata {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.more-ops {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.more-ops .more-actions {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cdd0d3;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 148px;
+    right: -100%;
+    z-index: 999;
+    -webkit-box-shadow: 0px 0px 5px #dddddd;
+    -moz-box-shadow: 0px 0px 5px #dddddd;
+    box-shadow: 0px 0px 5px #dddddd;
+    margin-top: 40px;
+    display: none;
+    -webkit-transform-origin: top right;
+    -moz-transform-origin: top right;
+    -o-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.more-ops .more-actions.pop {
+    display: block;
+    -webkit-animation: 'popdown' 0.1s ease-out;
+    -moz-animation: 'popdown' 0.1s ease-out;
+    -o-animation: 'popdown' 0.1s ease-out;
+    animation: 'popdown' 0.1s ease-out;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.more-ops .more-actions .wap-list-item {
+    border: none;
+}
+.spreadsheet-file-content-panel-item.grid .spreadsheet-file-content-panel-item-container.more-ops .wap-dropdown-item-text {
+    margin-right: 24px;
+}
+.spreadsheet-file-content-panel-item.grid.folder {
+    background: #ffffff;
+    border: none;
+    height: 40px;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+}
+.spreadsheet-file-content-panel-item.grid.folder.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid.folder.invisible {
+    visibility: hidden;
+}
+
+.spreadsheet-file-content-panel-item.grid.folder.selected {
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+}
+.spreadsheet-file-content-panel-item.grid.file.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.grid.file.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-item.grid.file.selected .spreadsheet-file-content-panel-item-container.preview.file {
+    background-color: #4285f4;
+}
+.spreadsheet-file-content-panel-item.grid.file.selected .spreadsheet-file-content-panel-item-container.preview.file .spreadsheet-file-content-panel-item-file-name-div {
+    color: #ffffff;
+}
+.spreadsheet-file-content-panel-item.grid.selected {
+    color: #ffffff;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+}
+.spreadsheet-file-content-panel-item.grid.selected .spreadsheet-file-content-panel-item-container.thumbnail-preview {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.spreadsheet-file-content-panel-item.grid.selected .spreadsheet-file-content-panel-item-container.thumbnail-preview .spreadsheet-file-content-panel-item-thumbnail-icon.folder {
+    color: #ffffff;
+}
+.spreadsheet-file-content-panel-item.grid.selected .spreadsheet-file-content-panel-item-container.folder.preview,
+.spreadsheet-file-content-panel-item.grid.selected .spreadsheet-file-content-panel-item-container.folder.thumbnail-preview {
+    background-color: #4285f4;
+}
+.spreadsheet-file-content-panel-item.list {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: 1px solid #f0f1f2;
+    background: #ffffff;
+    min-height: 56px;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.spreadsheet-file-content-panel-item.list.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-item.list:hover {
+    background-color: #f0f1f2;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.spreadsheet-file-content-panel-item.list:first-child {
+    margin-top: -1px;
+}
+.spreadsheet-file-content-panel-item.list.folder.drag-over {
+    border: 2px solid #4285f4;
+}
+.spreadsheet-file-content-panel-item.list.selected {
+    border-color: #3b77db;
+    z-index: 2;
+    background-color: #4285f4;
+    color: #ffffff;
+}
+.spreadsheet-file-content-panel-item.list.selected .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div {
+    -webkit-border-radius: 50%;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 50%;
+    -moz-background-clip: border;
+    border-radius: 50%;
+    background-clip: border-box;
+    background-color: #ffffff;
+}
+.spreadsheet-file-content-panel-item.list.selected.folder .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-size-text,
+.spreadsheet-file-content-panel-item.list.selected.file .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-size-text {
+    background: #4285f4;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container {
+    height: 56px;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container-select-icon {
+    top: -4px;
+    left: -12px;
+    font-size: 1rem;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.thumbnail-preview {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-basis: 45.83333333333333%;
+    flex-basis: 45.83333333333333%;
+    max-width: 45.83333333%;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div {
+    position: relative;
+    font-size: 3rem;
+    height: 40px;
+    width: 40px;
+    margin-left: 16px;
+    min-width: 40px;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-image {
+    height: 100%;
+    width: 100%;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-image.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-image.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon {
+    font-size: 2rem;
+    font-weight: 400;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file:before {
+    content: "\e026";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.file.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess:before {
+    content: "\e65e";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ess.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img:before {
+    content: "\e00d";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.img.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics:before {
+    content: "\e04e";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ics.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #3f51b5;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip:before {
+    content: "\e1b6";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.zip.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #4caf50;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls:before {
+    content: "\e1b5";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.xls.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf:before {
+    content: "\e1b2";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.pdf.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #03a9f4;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt:before {
+    content: "\e610";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.txt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #b8bdc2;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder:before {
+    content: "\e02e";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.folder.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid:before {
+    content: "\e924";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.vid.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio:before {
+    content: "\e010";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.audio.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #f44336;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing:before {
+    content: "\e91f";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.drawing.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #ff9800;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    font-family: 'wapicon';
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt:before {
+    content: "\e91e";
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-icon-or-image-div-icon.ppt.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-file-name-div {
+    line-height: 2.5;
+    padding: 4px 8px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-file-name-div:hover {
+    color: #818da2;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-star-div {
+    line-height: 40px;
+    margin-left: 16px;
+    padding: 2px;
+    float: right;
+    color: #fabd11;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-star-div-icon.hidden {
+    display: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-star-div-icon.invisible {
+    visibility: hidden;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-tags-div {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    line-height: 2.5;
+    padding: 4px;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-tags-div-tag {
+    font-size: 1.6rem;
+    line-height: normal;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-tags-div-tag-icon {
+    padding: 4px 0px;
+    line-height: 2.2;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-basis: 50.83333333333333%;
+    flex-basis: 50.83333333333333%;
+    max-width: 50.83333333%;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-owner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-basis: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-align: center;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-owner-pic-div {
+    font-size: 3rem;
+    height: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    margin-right: 8px;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-owner-pic-div-pic {
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 50%;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 50%;
+    -moz-background-clip: border;
+    border-radius: 50%;
+    background-clip: border-box;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-owner-name-div {
+    line-height: 56px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-date {
+    line-height: 56px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-size {
+    line-height: 56px;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-basis: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+    position: relative;
+    height: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-size-text {
+    background: #ffffff;
+    position: relative;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.metadata .spreadsheet-file-content-panel-item-size-empty {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.more-ops {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-basis: 3.3333333333333335%;
+    flex-basis: 3.3333333333333335%;
+    max-width: 3.33333333%;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.more-ops .more-actions {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cdd0d3;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 148px;
+    right: -100%;
+    z-index: 999;
+    margin-top: 40px;
+    display: none;
+    -webkit-transform-origin: top right;
+    -moz-transform-origin: top right;
+    -o-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: border;
+    border-radius: 3px;
+    background-clip: border-box;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.more-ops .more-actions.pop {
+    display: block;
+    -webkit-animation: 'popdown' 0.1s ease-out;
+    -moz-animation: 'popdown' 0.1s ease-out;
+    -o-animation: 'popdown' 0.1s ease-out;
+    animation: 'popdown' 0.1s ease-out;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.more-ops .more-actions .wap-list-item {
+    border: none;
+}
+.spreadsheet-file-content-panel-item.list .spreadsheet-file-content-panel-item-container.more-ops .wap-dropdown-item-text {
+    margin-right: 24px;
+}
+.spreadsheet-file-content-panel-item.selected .spreadsheet-file-content-panel-item-container.preview .spreadsheet-file-content-panel-item-file-name-div:hover {
+    color: #ffffff;
+}
